@@ -6,9 +6,7 @@ php:
 install:
   - composer install
 
-before_script:
-  - cp .env.travis .env
-
 script:
+  - cp .env.travis .env
   - php artisan key:generate
   - ./vendor/bin/phpunit --coverage-clover=coverage.xml
