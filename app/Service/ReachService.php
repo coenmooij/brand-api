@@ -29,8 +29,7 @@ final class ReachService implements ReachServiceInterface
         $users = $this->getUsers($retweeterIds);
         $reach = $this->sumFollowers($users);
 
-        Redis::set($tweetId, $reach);
-        Redis::expire($tweetId, self::EXPIRATION_TIME_IN_SECONDS);
+        $this->cacheReach($tweetId, $reach);
 
         return $reach;
     }
@@ -53,5 +52,11 @@ final class ReachService implements ReachServiceInterface
         }
 
         return $reach;
+    }
+
+    private function cacheReach(string $tweetId, int $reach): void
+    {
+        Redis::set($tweetId, $reach);
+        Redis::expire($tweetId, self::EXPIRATION_TIME_IN_SECONDS);
     }
 }
