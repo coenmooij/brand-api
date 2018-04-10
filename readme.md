@@ -1,23 +1,51 @@
-# Twitter Reach API
+# Brand API
 
-This api calculates the reach for a given tweet. It uses Redis to cache calculated reach for two hours.
+The Brand API allows you to add twitter accounts and do analytics on them. 
+See how many people you have reached through your social media posts.
 
-Endpoint:
+## Endpoints
+
+### Authentication
+| Method | URI | Body | Response |
+| ------ | --- | ---- | -------- |
+| POST | /authentication/register | email, password, firstName, lastName | token |   
+| POST | /authentication/login | email, password | token |
+| GET | /authentication/logout |
+| POST | /authentication/reset-password | email |
+
+### Twitter
+| Method | URI | Body | Response |
+| ------ | --- | ---- | -------- |
+| GET | /twitter/accounts | | accounts |
+| POST | /twitter/accounts | TODO | account |
+| |
+| GET | /twitter/accounts/{id} | | account |
+| PATCH | /twitter/accounts/{id} | TODO | account |
+| DELETE | /twitter/accounts/{id} | TODO |
+| |
+| GET | /twitter/accounts/{id}/statistics | | accountStatistics |
+| GET | /twitter/accounts/{id}/tweets | | tweets |
+| |
+| GET | /twitter/tweets | | tweets |
+| GET | /twitter/tweets/{id} | | tweet |
+| GET | /twitter/tweets/{id}/statistics | | tweetStatistics |
+
+### Example Login
 ```yml
-GET /api/tweets/:id/reach
+POST   /authentication/login
 ```
-
-Success response:
 ```json
-{ 
-    "code": 200, 
-    "message": "OK",
-    "data": {
-        "reach": 123
-    }
+body: {
+  "email": "email@example.com",
+  "password": "password"
 }
 ```
-
-## Twitter Reach UI
-
-![screenshot](http://hmp.me/bb9d)
+```json
+response: {
+  "code": 200,
+  "message": "Successfully logged in!",
+  "data": {
+    "token": "exampletoken"
+  }
+}
+```

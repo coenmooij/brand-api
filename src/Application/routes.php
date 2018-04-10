@@ -15,15 +15,15 @@ Route::middleware('auth')->group(
     function () {
         Route::prefix('twitter')->namespace('CoenMooij\BrandApi\Application\Twitter')->group(
             function () {
-                Route::get('/twitter-accounts', 'TwitterAccountController@getAll');
-                Route::post('/twitter-accounts', 'TwitterAccountController@post');
+                Route::get('/accounts', 'TwitterAccountController@getAll');
+                Route::post('/accounts', 'TwitterAccountController@post');
 
-                Route::get('/twitter-accounts/{id}', 'TwitterAccountController@getOne');
-                Route::patch('/twitter-accounts/{id}', 'TwitterAccountController@patch');
-                Route::delete('/twitter-accounts/{id}', 'TwitterAccountController@delete');
+                Route::get('/accounts/{id}', 'TwitterAccountController@getOne');
+                Route::patch('/accounts/{id}', 'TwitterAccountController@patch');
+                Route::delete('/accounts/{id}', 'TwitterAccountController@delete');
 
-                Route::get('/twitter-accounts/{id}/statistics', 'AccountStatisticsController@getByAccountId');
-                Route::get('/twitter-accounts/{id}/tweets', 'TweetController@getAllByAccountId');
+                Route::get('/accounts/{id}/statistics', 'AccountStatisticsController@getByAccountId');
+                Route::get('/accounts/{id}/tweets', 'TweetController@getAllByAccountId');
 
                 Route::get('/tweets', 'TweetController@getAll');
                 Route::get('/tweets/{id}', 'TweetController@getOne');
