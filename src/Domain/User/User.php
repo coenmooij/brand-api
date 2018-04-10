@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace CoenMooij\BrandApi\Domain\User;
 
+use CoenMooij\BrandApi\Domain\Twitter\TwitterAccount;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 final class User extends Model implements Authenticatable
 {
@@ -36,6 +38,11 @@ final class User extends Model implements Authenticatable
     public function getFullNameAttribute(): string
     {
         return $this->{self::FIRST_NAME} . ' ' . $this->{self::LAST_NAME};
+    }
+
+    public function twitterAccounts(): HasMany
+    {
+        return $this->hasMany(TwitterAccount::class, 'user_id');
     }
 
     /**

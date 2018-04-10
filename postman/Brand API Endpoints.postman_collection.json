@@ -186,6 +186,199 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Twitter Accounts",
+			"description": "",
+			"item": [
+				{
+					"name": "All Accounts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{api_url}}/twitter/accounts",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"twitter",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "One Account",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{api_url}}/twitter/accounts/1",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"twitter",
+								"accounts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "accessToken",
+									"value": "{{access_token}}",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "accessTokenSecret",
+									"value": "{{access_token_secret}}",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "consumerKey",
+									"value": "{{consumer_key}}",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "consumerSecret",
+									"value": "{{consumer_secret}}",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/twitter/accounts",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"twitter",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Account",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "accessToken",
+									"value": "{{access_token}}",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "accessTokenSecret",
+									"value": "{{access_token_secret}}",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "consumerKey",
+									"value": "{{consumer_key}}",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "consumerSecret",
+									"value": "{{consumer_secret}}",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/twitter/accounts/1",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"twitter",
+								"accounts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Account",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{api_url}}/twitter/accounts/1",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"twitter",
+								"accounts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"event": [
@@ -212,21 +405,21 @@
 	],
 	"variable": [
 		{
-			"id": "d1ebafc2-57e1-48e5-b23e-b6156b1e74da",
+			"id": "103f24d1-d4c2-4aeb-b716-1e79ffeb7e00",
 			"key": "password",
 			"value": "test123",
 			"type": "string",
 			"description": ""
 		},
 		{
-			"id": "7d518790-3c49-4e3f-9ac3-db414089b5a3",
+			"id": "1ad10946-f011-4d36-9e12-a8ce32c2a885",
 			"key": "api_url",
 			"value": "",
 			"type": "string",
 			"description": ""
 		},
 		{
-			"id": "86c6ec4b-c54b-4a7d-b9a0-51bb6e5baf4f",
+			"id": "83ca3b74-49ec-4170-bba3-7ccddc08eb16",
 			"key": "token",
 			"value": "",
 			"type": "string",

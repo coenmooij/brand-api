@@ -5,12 +5,45 @@
     {
       "key": "api_url",
       "value": "http://api.brand.test",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "access_token",
+      "value": "use-your-own",
+      "description": "",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "access_token_secret",
+      "value": "use-your-own",
+      "description": "",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "consumer_key",
+      "value": "use-your-own",
+      "description": "",
+      "type": "text",
+      "enabled": true
+    },
+    {
+      "key": "consumer_secret",
+      "value": "use-your-own",
       "description": "",
       "type": "text",
       "enabled": true
     }
   ],
   "_postman_variable_scope": "environment",
-  "_postman_exported_at": "2018-04-10T15:25:16.737Z",
+  "_postman_exported_at": "2018-04-10T20:56:34.161Z",
   "_postman_exported_using": "Postman/6.0.10"
 }
