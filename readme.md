@@ -18,17 +18,11 @@ See how many people you have reached through your social media posts.
 | ------ | --- | ---- | -------- |
 | GET | `/twitter/accounts` | | accounts |
 | POST | `/twitter/accounts` | TODO | account |
-| |
-| |
 | GET | `/twitter/accounts/{id}` | | account |
 | PATCH | `/twitter/accounts/{id}` | TODO | account |
 | DELETE | `/twitter/accounts/{id}` | TODO |
-| |
-| |
 | GET | `/twitter/accounts/{id}/statistics` | | accountStatistics |
 | GET | `/twitter/accounts/{id}/tweets` | | tweets |
-| |
-| |
 | GET | `/twitter/tweets` | | tweets |
 | GET | `/twitter/tweets/{id}` | | tweet |
 | GET | `/twitter/tweets/{id}/statistics` | | tweetStatistics |
