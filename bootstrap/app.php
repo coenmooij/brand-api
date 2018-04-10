@@ -16,7 +16,7 @@ $app->singleton(
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
-    CoenMooij\BrandApi\Infrastructure\Exceptions\ExceptionHandler::class
+    \Illuminate\Foundation\Exceptions\Handler::class
 );
 
 return $app;

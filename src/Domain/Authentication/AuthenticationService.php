@@ -91,6 +91,6 @@ final class AuthenticationService implements AuthenticationServiceInterface
 
     private function getPepper(): string
     {
-        return env('PEPPER', '');
+        return env('PEPPER', '') ?? '';
     }
 }

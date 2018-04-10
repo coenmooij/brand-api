@@ -48,11 +48,11 @@ final class TwitterAccountService implements TwitterAccountServiceInterface
 
     public function getOne($id): TwitterAccount
     {
-        $account = $this->getTwitterAccount($id);
+        $twitterAccount = $this->getTwitterAccount($id);
 
-        $this->authorizationService->ensureCanAccessTwitterAccount($account);
+        $this->authorizationService->ensureCanAccessTwitterAccount($twitterAccount);
 
-        return $account;
+        return $twitterAccount;
     }
 
     public function add(
@@ -103,6 +103,6 @@ final class TwitterAccountService implements TwitterAccountServiceInterface
 
     private function getTwitterAccount(int $id): TwitterAccount
     {
-        return TwitterAccount::find($id);
+        return TwitterAccount::findOrFail($id);
     }
 }
