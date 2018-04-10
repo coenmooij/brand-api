@@ -42,7 +42,7 @@ final class User extends Model implements Authenticatable
 
     public function twitterAccounts(): HasMany
     {
-        return $this->hasMany(TwitterAccount::class, 'user_id');
+        return $this->hasMany(TwitterAccount::class, TwitterAccount::USER_ID);
     }
 
     /**

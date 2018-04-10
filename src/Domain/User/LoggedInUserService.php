@@ -14,7 +14,7 @@ final class LoggedInUserService implements LoggedInUserServiceInterface
         /** @var User $user */
         $user = Auth::user();
 
-        if (is_null($user)) {
+        if ($user === null) {
             throw new UnauthorizedException();
         }
 
