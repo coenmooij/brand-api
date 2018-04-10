@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "coenmooij/brand-api",
+    "description": "Brand API to get data on your brand.",
+    "keywords": ["laravel", "DDD"],
     "license": "MIT",
     "type": "project",
     "require": {
@@ -26,7 +26,7 @@
             "database/factories"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "CoenMooij\\BrandApi\\": "src/"
         }
     },
     "autoload-dev": {
