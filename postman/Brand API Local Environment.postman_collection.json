@@ -1,0 +1,16 @@
+{
+  "id": "9818f74d-f4b0-4e57-8472-09c6b0c3360f",
+  "name": "Brand API Local",
+  "values": [
+    {
+      "key": "api_url",
+      "value": "http://api.brand.test",
+      "description": "",
+      "type": "text",
+      "enabled": true
+    }
+  ],
+  "_postman_variable_scope": "environment",
+  "_postman_exported_at": "2018-04-10T15:25:16.737Z",
+  "_postman_exported_using": "Postman/6.0.10"
+}

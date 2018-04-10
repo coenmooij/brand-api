@@ -53,6 +53,12 @@ return [
             'strict' => true,
             'engine' => null,
         ],
+
+        'sqlite_test' => [
+            'driver' => 'sqlite',
+            'database' => ':memory:',
+            'prefix' => '',
+        ],
     ],
 
     /*

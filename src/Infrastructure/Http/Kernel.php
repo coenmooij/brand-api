@@ -2,7 +2,8 @@
 
 namespace CoenMooij\BrandApi\Infrastructure\Http;
 
-use CoenMooij\BrandApi\Infrastructure\Middleware\Cors;
+use CoenMooij\BrandApi\CoenMooij\BrandApi\Infrastructure\Middleware\AuthenticationMiddleware;
+use CoenMooij\BrandApi\Infrastructure\Middleware\CorsMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 final class Kernel extends HttpKernel
@@ -28,8 +29,11 @@ final class Kernel extends HttpKernel
         'api' => [
             'throttle:60,1',
             'bindings',
-            Cors::class,
+            CorsMiddleware::class,
         ],
+        'auth' => [
+            AuthenticationMiddleware::class,
+        ]
     ];
 
     /**

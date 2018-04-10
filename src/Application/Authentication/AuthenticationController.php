@@ -21,6 +21,7 @@ final class AuthenticationController extends AbstractController
     private const FIRST_NAME_KEY = 'firstName';
     private const LAST_NAME_KEY = 'lastName';
     private const TOKEN_KEY = 'token';
+    private const USER_KEY = 'user';
 
     private const LOGIN_VALIDATION_RULES = [
         self::EMAIL_KEY => 'required|email|max:255',
@@ -53,21 +54,21 @@ final class AuthenticationController extends AbstractController
             $request->request->get(self::PASSWORD_KEY)
         );
 
-        return self::createResponse(Response::HTTP_CREATED, [self::TOKEN_KEY => $token], self::LOGIN_SUCCESS);
+        return self::createResponse(Response::HTTP_OK, [self::TOKEN_KEY => $token], self::LOGIN_SUCCESS);
     }
 
     public function register(Request $request): JsonResponse
     {
         $this->validate($request, self::REGISTER_RULES);
 
-        $token = $this->authenticationService->register(
+        $user = $this->authenticationService->register(
             $request->request->get(self::EMAIL_KEY),
             $request->request->get(self::PASSWORD_KEY),
             $request->request->get(self::FIRST_NAME_KEY),
             $request->request->get(self::LAST_NAME_KEY)
         );
 
-        return self::createResponse(Response::HTTP_CREATED, [self::TOKEN_KEY => $token], self::REGISTER_SUCCESS);
+        return self::createResponse(Response::HTTP_CREATED, [self::USER_KEY => $user], self::REGISTER_SUCCESS);
     }
 
     public function logout(): JsonResponse

@@ -8,7 +8,7 @@ See how many people you have reached through your social media posts.
 ### Authentication
 | Method | URI | Body | Response |
 | ------ | --- | ---- | -------- |
-| POST | `/authentication/register` | `email, password, firstName, lastName` | token |   
+| POST | `/authentication/register` | `email, password, firstName, lastName` | user |   
 | POST | `/authentication/login` | `email, password` | token |
 | GET | `/authentication/logout` |
 

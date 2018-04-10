@@ -7,7 +7,7 @@ namespace CoenMooij\BrandApi\Infrastructure\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-final class Cors
+final class CorsMiddleware
 {
     public function handle(Request $request, Closure $next)
     {

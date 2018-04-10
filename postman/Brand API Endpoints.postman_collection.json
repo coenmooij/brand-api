@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "fdd8d19e-3ccc-49cd-bb2e-8b2cacd28a7d",
+		"name": "Brand API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"description": "",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "61b6e2d1-5a2f-4947-a779-b92fabb3a3b2",
+								"type": "text/javascript",
+								"exec": [
+									"var data = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"token\", data.data.token);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "coenmooij@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/authentication/login",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"authentication",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "61b6e2d1-5a2f-4947-a779-b92fabb3a3b2",
+								"type": "text/javascript",
+								"exec": [
+									"var data = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"token\", data.data.token);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "coenmooij@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "text"
+								},
+								{
+									"key": "firstName",
+									"value": "Coen",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Mooij",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/authentication/register",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"authentication",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "416a36ed-0da5-415b-9c12-2d5b9446e6e8",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "coenmooij@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "text"
+								},
+								{
+									"key": "firstName",
+									"value": "Coen",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Mooij",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/authentication/logout",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"authentication",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "dfc94f3e-1a13-4ff3-840c-aa92944e73ea",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "21286255-1f71-4542-bf56-d73881b70a53",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "d1ebafc2-57e1-48e5-b23e-b6156b1e74da",
+			"key": "password",
+			"value": "test123",
+			"type": "string",
+			"description": ""
+		},
+		{
+			"id": "7d518790-3c49-4e3f-9ac3-db414089b5a3",
+			"key": "api_url",
+			"value": "",
+			"type": "string",
+			"description": ""
+		},
+		{
+			"id": "86c6ec4b-c54b-4a7d-b9a0-51bb6e5baf4f",
+			"key": "token",
+			"value": "",
+			"type": "string",
+			"description": ""
+		}
+	]
+}
