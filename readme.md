@@ -8,27 +8,30 @@ See how many people you have reached through your social media posts.
 ### Authentication
 | Method | URI | Body | Response |
 | ------ | --- | ---- | -------- |
-| POST | /authentication/register | email, password, firstName, lastName | token |   
-| POST | /authentication/login | email, password | token |
-| GET | /authentication/logout |
-| POST | /authentication/reset-password | email |
+| POST | `/authentication/register` | `email, password, firstName, lastName` | token |   
+| POST | `/authentication/login` | `email, password` | token |
+| GET | `/authentication/logout` |
+| POST | `/authentication/reset-password` | `email` |
 
 ### Twitter
 | Method | URI | Body | Response |
 | ------ | --- | ---- | -------- |
-| GET | /twitter/accounts | | accounts |
-| POST | /twitter/accounts | TODO | account |
+| GET | `/twitter/accounts` | | accounts |
+| POST | `/twitter/accounts` | TODO | account |
 | |
-| GET | /twitter/accounts/{id} | | account |
-| PATCH | /twitter/accounts/{id} | TODO | account |
-| DELETE | /twitter/accounts/{id} | TODO |
 | |
-| GET | /twitter/accounts/{id}/statistics | | accountStatistics |
-| GET | /twitter/accounts/{id}/tweets | | tweets |
+| GET | `/twitter/accounts/{id}` | | account |
+| PATCH | `/twitter/accounts/{id}` | TODO | account |
+| DELETE | `/twitter/accounts/{id}` | TODO |
 | |
-| GET | /twitter/tweets | | tweets |
-| GET | /twitter/tweets/{id} | | tweet |
-| GET | /twitter/tweets/{id}/statistics | | tweetStatistics |
+| |
+| GET | `/twitter/accounts/{id}/statistics` | | accountStatistics |
+| GET | `/twitter/accounts/{id}/tweets` | | tweets |
+| |
+| |
+| GET | `/twitter/tweets` | | tweets |
+| GET | `/twitter/tweets/{id}` | | tweet |
+| GET | `/twitter/tweets/{id}/statistics` | | tweetStatistics |
 
 ### Example Login
 ```yml
