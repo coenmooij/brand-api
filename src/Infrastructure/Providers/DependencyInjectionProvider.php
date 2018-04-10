@@ -10,10 +10,14 @@ use CoenMooij\BrandApi\Domain\Authorization\AuthorizationService;
 use CoenMooij\BrandApi\Domain\Authorization\AuthorizationServiceInterface;
 use CoenMooij\BrandApi\Domain\Twitter\TwitterAccountService;
 use CoenMooij\BrandApi\Domain\Twitter\TwitterAccountServiceInterface;
+use CoenMooij\BrandApi\Domain\Twitter\TwitterAccountStatisticsService;
+use CoenMooij\BrandApi\Domain\Twitter\TwitterAccountStatisticsServiceInterface;
 use CoenMooij\BrandApi\Domain\User\LoggedInUserService;
 use CoenMooij\BrandApi\Domain\User\LoggedInUserServiceInterface;
 use CoenMooij\BrandApi\Infrastructure\Connections\Twitter\TwitterService;
 use CoenMooij\BrandApi\Infrastructure\Connections\Twitter\TwitterServiceInterface;
+use CoenMooij\BrandApi\Infrastructure\Persistence\TwitterAccountStatisticsRepository;
+use CoenMooij\BrandApi\Infrastructure\Persistence\TwitterAccountStatisticsRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 final class DependencyInjectionServiceProvider extends ServiceProvider
@@ -25,5 +29,7 @@ final class DependencyInjectionServiceProvider extends ServiceProvider
         $this->app->bind(LoggedInUserServiceInterface::class, LoggedInUserService::class);
         $this->app->bind(AuthorizationServiceInterface::class, AuthorizationService::class);
         $this->app->bind(TwitterServiceInterface::class, TwitterService::class);
+        $this->app->bind(TwitterAccountStatisticsServiceInterface::class, TwitterAccountStatisticsService::class);
+        $this->app->bind(TwitterAccountStatisticsRepositoryInterface::class, TwitterAccountStatisticsRepository::class);
     }
 }
