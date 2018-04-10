@@ -11,7 +11,6 @@ See how many people you have reached through your social media posts.
 | POST | `/authentication/register` | `email, password, firstName, lastName` | token |   
 | POST | `/authentication/login` | `email, password` | token |
 | GET | `/authentication/logout` |
-| POST | `/authentication/reset-password` | `email` |
 
 ### Twitter
 | Method | URI | Body | Response |

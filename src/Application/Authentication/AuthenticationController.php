@@ -16,11 +16,10 @@ final class AuthenticationController extends AbstractController
     private const LOGOUT_SUCCESS = 'Logout successful';
     private const REGISTER_SUCCESS = 'Successfully registered';
 
-    private const PASSWORD_RESET = 'Password reset link was sent';
     private const EMAIL_KEY = 'email';
     private const PASSWORD_KEY = 'password';
-    private const FIRST_NAME_KEY = 'first_name';
-    private const LAST_NAME_KEY = 'last_name';
+    private const FIRST_NAME_KEY = 'firstName';
+    private const LAST_NAME_KEY = 'lastName';
     private const TOKEN_KEY = 'token';
 
     private const LOGIN_VALIDATION_RULES = [
@@ -33,9 +32,6 @@ final class AuthenticationController extends AbstractController
         self::PASSWORD_KEY => 'required|max:255',
         self::FIRST_NAME_KEY => 'required|max:255',
         self::LAST_NAME_KEY => 'required|max:255',
-    ];
-    private const RESET_PASSWORD_RULES = [
-        self::EMAIL_KEY => 'required|email|max:255',
     ];
 
     /**
@@ -79,14 +75,5 @@ final class AuthenticationController extends AbstractController
         $this->authenticationService->logout();
 
         return self::createResponse(Response::HTTP_OK, null, self::LOGOUT_SUCCESS);
-    }
-
-    public function resetPassword(Request $request): JsonResponse
-    {
-        $this->validate($request, self::RESET_PASSWORD_RULES);
-
-        $this->authenticationService->resetPassword($request->request->get(self::EMAIL_KEY));
-
-        return self::createResponse(Response::HTTP_CREATED, null, self::PASSWORD_RESET);
     }
 }

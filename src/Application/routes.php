@@ -6,7 +6,6 @@ Route::prefix('authentication')->namespace('CoenMooij\BrandApi\Application\Authe
     function () {
         Route::post('/login', 'AuthenticationController@login');
         Route::post('/register', 'AuthenticationController@register');
-        Route::post('/resetPassword', 'AuthenticationController@resetPassword');
         Route::get('/logout', 'AuthenticationController@logout')->middleware('auth');
     }
 );
