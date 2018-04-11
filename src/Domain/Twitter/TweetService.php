@@ -35,7 +35,7 @@ final class TweetService implements TweetServiceInterface
 
         $accounts = $this->twitterAccountService->getAll();
         foreach ($accounts as $account) {
-            $tweets[] = $this->tweetRepository->getLatestTweets($account);
+            array_push($tweets, ...$this->tweetRepository->getLatestTweets($account));
         }
 
         return $tweets;

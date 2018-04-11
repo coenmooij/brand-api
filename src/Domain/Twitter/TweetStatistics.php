@@ -20,10 +20,8 @@ final class TweetStatistics implements Arrayable, JsonSerializable
      */
     private $reach;
 
-    public function __construct(
-        string $tweetId,
-        int $reach
-    ) {
+    public function __construct(string $tweetId, int $reach)
+    {
         $this->tweetId = $tweetId;
         $this->reach = $reach;
     }
@@ -49,7 +47,7 @@ final class TweetStatistics implements Arrayable, JsonSerializable
     {
         $data = json_decode($serialized, true);
 
-        return new self($tweetId, ...array_values($data));
+        return new self($tweetId, $data[0]);
     }
 
     public function jsonSerialize()

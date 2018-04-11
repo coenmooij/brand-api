@@ -9,6 +9,7 @@ use CoenMooij\BrandApi\Domain\User\LoggedInUserServiceInterface;
 use CoenMooij\BrandApi\Domain\User\User;
 use CoenMooij\BrandApi\Infrastructure\Exceptions\DuplicateRegistrationException;
 use CoenMooij\BrandApi\Infrastructure\Exceptions\LoginFailedException;
+use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 final class AuthenticationService implements AuthenticationServiceInterface
@@ -101,6 +102,11 @@ final class AuthenticationService implements AuthenticationServiceInterface
 
     private function getPepper(): string
     {
-        return env('PEPPER', '') ?? '';
+        $pepper = getenv('PEPPER');
+        if (!$pepper) {
+            throw new Exception('Configuration Missing');
+        }
+
+        return $pepper;
     }
 }
