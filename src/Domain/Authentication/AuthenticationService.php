@@ -102,8 +102,8 @@ final class AuthenticationService implements AuthenticationServiceInterface
 
     private function getPepper(): string
     {
-        $pepper = getenv('PEPPER');
-        if (!$pepper) {
+        $pepper = env('PEPPER', '');
+        if (empty($pepper)) {
             throw new Exception('Configuration Missing');
         }
 
