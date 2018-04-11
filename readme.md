@@ -20,11 +20,11 @@ See how many people you have reached through your social media posts.
 | GET | `/twitter/accounts/{id}` | | account |
 | PATCH | `/twitter/accounts/{id}` | `accessToken, accessTokenSecret, consumerKey, consumerSecret` | account |
 | DELETE | `/twitter/accounts/{id}` |
-| GET | `/twitter/accounts/{id}/statistics` | | accountStatistics |
+| GET | `/twitter/accounts/{id}/statistics` | | statistics |
 | GET | `/twitter/accounts/{id}/tweets` | | tweets |
 | GET | `/twitter/tweets` | | tweets |
 | GET | `/twitter/tweets/{id}` | | tweet |
-| GET | `/twitter/tweets/{id}/statistics` | | tweetStatistics |
+| GET | `/twitter/tweets/{id}/statistics` | | statistics |
 
 ### Example Login
 ```yml
