@@ -5,14 +5,24 @@ declare(strict_types=1);
 namespace CoenMooij\BrandApi\Domain\Authentication;
 
 use Carbon\Carbon;
+use CoenMooij\BrandApi\Domain\User\LoggedInUserServiceInterface;
 use CoenMooij\BrandApi\Domain\User\User;
 use CoenMooij\BrandApi\Infrastructure\Exceptions\DuplicateRegistrationException;
 use CoenMooij\BrandApi\Infrastructure\Exceptions\LoginFailedException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Illuminate\Support\Facades\Auth;
 
 final class AuthenticationService implements AuthenticationServiceInterface
 {
+    /**
+     * @var LoggedInUserServiceInterface
+     */
+    private $loggedInUserService;
+
+    public function __construct(LoggedInUserServiceInterface $loggedInUserService)
+    {
+        $this->loggedInUserService = $loggedInUserService;
+    }
+
     /**
      * @throws LoginFailedException
      */
@@ -53,7 +63,7 @@ final class AuthenticationService implements AuthenticationServiceInterface
 
     public function logout(): void
     {
-        $user = Auth::User();
+        $user = $this->loggedInUserService->getLoggedInUser();
         $user->{User::TOKEN} = null;
         $user->{User::TOKEN_EXPIRES} = null;
         $user->saveOrFail();
