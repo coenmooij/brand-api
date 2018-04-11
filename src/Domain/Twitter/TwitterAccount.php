@@ -18,13 +18,6 @@ final class TwitterAccount extends Model
     public const CONSUMER_KEY = 'consumer_key';
     public const CONSUMER_SECRET = 'consumer_secret';
 
-    protected $hidden = [
-        self::ACCESS_TOKEN,
-        self::ACCESS_TOKEN_SECRET,
-        self::CONSUMER_KEY,
-        self::CONSUMER_SECRET,
-    ];
-
     public function getId(): int
     {
         return $this->{self::ID};

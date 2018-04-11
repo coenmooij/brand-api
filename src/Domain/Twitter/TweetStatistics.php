@@ -47,7 +47,7 @@ final class TweetStatistics implements Arrayable, JsonSerializable
     {
         $data = json_decode($serialized, true);
 
-        return new self($tweetId, $data[0]);
+        return new self($tweetId, ...array_values($data));
     }
 
     public function jsonSerialize()

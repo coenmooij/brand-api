@@ -6,5 +6,5 @@ namespace CoenMooij\BrandApi\Domain\Twitter;
 
 interface TwitterAccountStatisticsServiceInterface
 {
-    public function getByAccountId($id): TwitterAccountStatistics;
+    public function getByAccountId(int $accountId): TwitterAccountStatistics;
 }

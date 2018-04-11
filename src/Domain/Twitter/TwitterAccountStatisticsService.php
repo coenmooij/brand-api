@@ -19,19 +19,26 @@ final class TwitterAccountStatisticsService implements TwitterAccountStatisticsS
      */
     private $twitterAccountStatisticsRepository;
 
+    /**
+     * @var TwitterAccountServiceInterface
+     */
+    private $twitterAccountService;
+
     public function __construct(
         AuthorizationServiceInterface $authorizationService,
-        TwitterAccountStatisticsRepositoryInterface $twitterAccountStatisticsRepository
+        TwitterAccountStatisticsRepositoryInterface $twitterAccountStatisticsRepository,
+        TwitterAccountServiceInterface $twitterAccountService
     ) {
         $this->authorizationService = $authorizationService;
         $this->twitterAccountStatisticsRepository = $twitterAccountStatisticsRepository;
+        $this->twitterAccountService = $twitterAccountService;
     }
 
-    public function getByAccountId($id): TwitterAccountStatistics
+    public function getByAccountId(int $accountId): TwitterAccountStatistics
     {
-        $account = TwitterAccount::findOrFail($id);
+        $account = $this->twitterAccountService->getOne($accountId);
         $this->authorizationService->ensureCanAccessTwitterAccount($account);
 
-        return $this->twitterAccountStatisticsRepository->getByAccountId($id);
+        return $this->twitterAccountStatisticsRepository->getByAccountId($accountId);
     }
 }

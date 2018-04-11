@@ -22,7 +22,7 @@ final class CreateTwitterAccountsTable extends Migration
                 $table->string('consumer_secret');
                 $table->timestamps();
 
-                $table->index('user_id');
+                $table->unique('user_id');
                 $table->foreign(['user_id'])->references(['id'])->on('users')->onDelete('cascade');
             }
         );
