@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace CoenMooij\BrandApi\Domain\Twitter;
 
 use CoenMooij\BrandApi\Domain\Authorization\AuthorizationServiceInterface;
-use CoenMooij\BrandApi\Infrastructure\Persistence\TwitterAccountStatisticsRepositoryInterface;
+use CoenMooij\BrandApi\Infrastructure\Persistence\Twitter\TwitterAccountStatisticsRepositoryInterface;
 
 final class TwitterAccountStatisticsService implements TwitterAccountStatisticsServiceInterface
 {
@@ -32,8 +32,6 @@ final class TwitterAccountStatisticsService implements TwitterAccountStatisticsS
         $account = TwitterAccount::findOrFail($id);
         $this->authorizationService->ensureCanAccessTwitterAccount($account);
 
-        $accountStatistics = $this->twitterAccountStatisticsRepository->getByAccountId($id);
-
-        return $accountStatistics;
+        return $this->twitterAccountStatisticsRepository->getByAccountId($id);
     }
 }

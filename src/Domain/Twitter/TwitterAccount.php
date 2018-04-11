@@ -25,6 +25,16 @@ final class TwitterAccount extends Model
         self::CONSUMER_SECRET,
     ];
 
+    public function getId(): int
+    {
+        return $this->{self::ID};
+    }
+
+    public function getUsername(): string
+    {
+        return $this->{self::USERNAME};
+    }
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, self::USER_ID);

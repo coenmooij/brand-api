@@ -89,7 +89,7 @@ final class TwitterAccountStatistics implements Arrayable, JsonSerializable
         return new self($accountId, ...array_values($data));
     }
 
-  public function jsonSerialize()
+    public function jsonSerialize()
     {
         return $this->toArray();
     }
