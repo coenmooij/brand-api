@@ -379,6 +379,145 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Statistics",
+			"description": "",
+			"item": [
+				{
+					"name": "Account Statistics",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{api_url}}/twitter/accounts/1/statistics",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"twitter",
+								"accounts",
+								"1",
+								"statistics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tweet Statistics",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{api_url}}/twitter/tweets/983997616697630720/statistics",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"twitter",
+								"tweets",
+								"983997616697630720",
+								"statistics"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tweets",
+			"description": "",
+			"item": [
+				{
+					"name": "Account Tweets",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{api_url}}/twitter/accounts/1/tweets",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"twitter",
+								"accounts",
+								"1",
+								"tweets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single Tweet",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{api_url}}/twitter/tweets/964214581630513153",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"twitter",
+								"tweets",
+								"964214581630513153"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Tweets",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{api_url}}/twitter/tweets",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"twitter",
+								"tweets"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"event": [
@@ -405,21 +544,21 @@
 	],
 	"variable": [
 		{
-			"id": "103f24d1-d4c2-4aeb-b716-1e79ffeb7e00",
+			"id": "34be4627-dc25-4d7d-91bc-d78fa15a07d3",
 			"key": "password",
 			"value": "test123",
 			"type": "string",
 			"description": ""
 		},
 		{
-			"id": "1ad10946-f011-4d36-9e12-a8ce32c2a885",
+			"id": "61adfbf5-5209-4064-ad47-c9cc157e4b39",
 			"key": "api_url",
 			"value": "",
 			"type": "string",
 			"description": ""
 		},
 		{
-			"id": "83ca3b74-49ec-4170-bba3-7ccddc08eb16",
+			"id": "9877daf9-a025-44fe-9d4e-b1da4ffacc5a",
 			"key": "token",
 			"value": "",
 			"type": "string",
